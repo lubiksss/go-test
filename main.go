@@ -1,28 +1,15 @@
 package main
 
-import (
-	log "github.com/sirupsen/logrus"
-	"os"
-)
+import "fmt"
+
+type test struct {
+	int
+	string
+}
 
 func main() {
-	//log.SetFormatter(&log.JSONFormatter{})
-	//log.SetOutput(os.Stdout)
-	//log.SetLevel(log.DebugLevel)
-	//log.WithFields(log.Fields{
-	//	"info": "Success",
-	//}).Info("정상적으로 동작합니다.")
-
-	log.SetFormatter(&log.TextFormatter{
-		FullTimestamp: true,
-	})
-	log.SetOutput(os.Stdout)
-	log.SetLevel(log.DebugLevel)
-	log.WithFields(log.Fields{
-		"info": "Success",
-	}).Info("정상적으로 동작합니다.")
-	log.Info("test")
-	log.Debug("test")
-	log.Error("test")
-	//log.Fatal("test")
+	a := test{10, "10"}
+	fmt.Println(a)
+	b := test{int: 10, string: "10"}
+	fmt.Println(b)
 }
